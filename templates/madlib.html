@@ -6,6 +6,13 @@
 <body>
     There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.<br>
     When {{ person }} went to pick it up, it burst into flames in a totally
-    {{ adjective }} way.
+    {% for word in adjective %}
+        {% if not loop.last %}
+            {{ word }},
+        {% else %}
+            and {{ word }}
+        {% endif %}
+    {% endfor %}
+     way.
 </body>
 </html>
